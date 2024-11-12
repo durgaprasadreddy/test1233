@@ -1,0 +1,19 @@
+Postgress 16 client binaries troubleshoot
+
+sudo systemctl status postgresql
+sudo systemctl start postgresql
+sudo systemctl status postgresql-16
+sudo systemctl start postgresql-16
+sudo netstat -plnt | grep postgres
+sudo nano /etc/postgresql/16/main/postgresql.conf   # Debian/Ubuntu
+sudo nano /var/lib/pgsql/16/data/postgresql.conf    # CentOS/RHEL
+listen_addresses = 'localhost'
+port = 5432
+unix_socket_directories = '/tmp'
+
+sudo systemctl restart postgresql-16
+ls -la /tmp/.s.PGSQL.5432
+which psql
+psql --version
+
+sudo tail -f /var/log/postgresql/postgresql-16-main.log
