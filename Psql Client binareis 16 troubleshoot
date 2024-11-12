@@ -17,3 +17,17 @@ which psql
 psql --version
 
 sudo tail -f /var/log/postgresql/postgresql-16-main.log
+
+
+
+indicates that the PostgreSQL client (psql) is unable to connect to the server. This error usually happens for one of the following reasons:
+
+PostgreSQL server is not running.
+The server is not configured to listen on the Unix socket.
+The socket file /tmp/.s.PGSQL.5423 doesn't exist because the server is using a different socket path.
+There is a version mismatch between the PostgreSQL client (psql) and server.
+Incorrect port (5423) is being used, as PostgreSQL's default port is 5432.
+Let's troubleshoot step by step:
+
+Step 1: Check if PostgreSQL Server is Running
+Ensure that the PostgreSQL server is up and running:
